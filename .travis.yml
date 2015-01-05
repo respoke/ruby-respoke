@@ -1,18 +1,17 @@
 script: bundle exec rake test
-
 rvm:
-  - 2.1
-
+- 2.1
 notifications:
   email:
     recipients:
-      - monitoring@respoke.io
+    - monitoring@respoke.io
     email:
       on_success: change
       on_failure: always
-
 cache: bundler
-
 os:
   - linux
   - osx
+before_install:
+- openssl aes-256-cbc -K $encrypted_4e4ac21e4bd9_key -iv $encrypted_4e4ac21e4bd9_iv
+  -in test/test_config.yml.enc -out test/test_config.yml -d

@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/pho3nixf1re/ruby-respoke.svg?branch=master)](https://travis-ci.org/pho3nixf1re/ruby-respoke)
+[![Dependency Status](https://gemnasium.com/pho3nixf1re/ruby-respoke.svg)](https://gemnasium.com/pho3nixf1re/ruby-respoke)
+
 # Respoke
 
 TODO: Write a gem description
