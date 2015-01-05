@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.respoke.io/v1/session-tokens
+    body:
+      encoding: UTF-8
+      string: '{"appId":"0dfcfe78-c4af-497f-88f6-c6b3a8151fb3","tokenId":"5F90B522-93CF-4CB1-A915-14B385CF0105"}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 02 Jan 2015 21:30:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - f8b5663d-3ea6-413e-b409-aec2fd079db4
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"message":"Authorization successful","token":"72868261-8212-4F87-91A5-6D7CB7DE6BDC"}'
+    http_version: 
+  recorded_at: Fri, 02 Jan 2015 21:30:58 GMT
+recorded_with: VCR 2.9.3

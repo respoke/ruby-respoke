@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.respoke.io/v1/tokens
+    body:
+      encoding: UTF-8
+      string: '{"appId":"0dfcfe78-c4af-497f-88f6-c6b3a8151fb3","endpointId":"foo-bar","roleId":"56BD864A-3474-4D41-A3E7-1577078B63D5","ttl":86400}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 02 Jan 2015 21:30:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - 5b39afb9-c629-434f-861e-aadc75319f4b
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '7'
+    body:
+      encoding: UTF-8
+      string: '{"appId":"0dfcfe78-c4af-497f-88f6-c6b3a8151fb3","endpointId":"foo-bar","roleId":"56BD864A-3474-4D41-A3E7-1577078B63D5","accountId":"9628FFD0-54E8-402C-A979-368B03EC63D9","createTime":1420234258,"expiryTime":1420320658,"id":"E44902BA-639B-4EAD-9C88-CD846146BB19","forDevelopment":false,"createdAt":"2015-01-02T21:30:58.539Z","tokenId":"E44902BA-639B-4EAD-9C88-CD846146BB19"}'
+    http_version: 
+  recorded_at: Fri, 02 Jan 2015 21:30:58 GMT
+- request:
+    method: post
+    uri: https://api.respoke.io/v1/session-tokens
+    body:
+      encoding: UTF-8
+      string: '{"appId":"0dfcfe78-c4af-497f-88f6-c6b3a8151fb3","tokenId":"E44902BA-639B-4EAD-9C88-CD846146BB19"}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 02 Jan 2015 21:30:58 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - 9a985440-76b2-4e83-9528-ddf22414e1cf
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '6'
+    body:
+      encoding: UTF-8
+      string: '{"message":"Authorization successful","token":"1834AD29-F08B-43F7-91F1-52EF33814589"}'
+    http_version: 
+  recorded_at: Fri, 02 Jan 2015 21:30:58 GMT
+recorded_with: VCR 2.9.3

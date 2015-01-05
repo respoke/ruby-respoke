@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.respoke.io/v1/tokens
+    body:
+      encoding: UTF-8
+      string: '{"appId":"0dfcfe78-c4af-497f-88f6-c6b3a8151fb3","endpointId":"foo-bar","roleId":"56BD864A-3474-4D41-A3E7-1577078B63D5","ttl":86400}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 02 Jan 2015 21:30:57 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - a0df2435-0923-4ea4-a70f-23eebef6551b
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"appId":"0dfcfe78-c4af-497f-88f6-c6b3a8151fb3","endpointId":"foo-bar","roleId":"56BD864A-3474-4D41-A3E7-1577078B63D5","accountId":"9628FFD0-54E8-402C-A979-368B03EC63D9","createTime":1420234257,"expiryTime":1420320657,"id":"5F90B522-93CF-4CB1-A915-14B385CF0105","forDevelopment":false,"createdAt":"2015-01-02T21:30:57.714Z","tokenId":"5F90B522-93CF-4CB1-A915-14B385CF0105"}'
+    http_version: 
+  recorded_at: Fri, 02 Jan 2015 21:30:57 GMT
+recorded_with: VCR 2.9.3

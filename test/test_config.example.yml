@@ -1,0 +1,6 @@
+# values to be used in specs, these should be real working values from the
+# Developer Portal
+
+app_secret: <app-secret-token>
+app_id: <app-id>
+role_id: <role-id>

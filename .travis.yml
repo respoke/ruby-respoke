@@ -1,0 +1,22 @@
+script: bundle exec rake
+
+rvm:
+  - 2.0
+  - 2.1
+  - rbx-2.2
+  - jruby
+
+notifications:
+  email:
+    recipients:
+      - monitoring@respoke.io
+    email:
+      on_success: change
+      on_failure: always
+
+cache: bundler
+
+os:
+  - linux
+  - osx
+

@@ -1,0 +1,6 @@
+.bundle
+coverage
+doc
+.yardoc
+test/test_config*.yml
+!test/test_config.example.yml
