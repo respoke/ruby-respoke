@@ -6,7 +6,7 @@ require 'respoke/response'
 
 # Contains methods to make API calls.
 #
-# @example Simple endpoint authentication
+# @example One-step endpoint authentication
 #
 #   require 'respoke'
 #
@@ -23,6 +23,21 @@ require 'respoke/response'
 #     require 'respoke'
 #
 #     client = Respoke::Client.new(app_secret: '77269d84-d7f3-49da-8eab-bd6686160035')
+#
+#     session_id_response = client.request_session_token_id(
+#       appId: '0cdf7bc1-45d1-420a-963e-c797a6f7ba61',
+#       roleId: '47ea573f-5a78-42f4-927c-fe658bc00f91',
+#       endpointId: 'foo-bar-user'
+#     )
+#     session = client.request_session_token(
+#       appId: session_id_response.appId,
+#       tokenId: session_id_response.tokenId
+#     )
+#
+#     session.token #=> '3c022dbd-0a82-4382-bd0d-5af6e11b8d67'
+#
+#     # OR you can just use Client#app_token since Client#request_session_token
+#     # sets `@app_token`.
 #     client.app_token #=> '3c022dbd-0a82-4382-bd0d-5af6e11b8d67'
 #
 # @attr_reader app_token
