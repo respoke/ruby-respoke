@@ -1,7 +1,6 @@
 require "bundler/gem_tasks"
 require "rake/testtask"
-
-
+require 'yard'
 
 namespace :test do
   Rake::TestTask.new(:spec) do |t|
@@ -18,3 +17,7 @@ end
 task :test => ['test:spec', 'test:unit']
 
 task :default => :test
+
+YARD::Rake::YardocTask.new do |t|
+  t.options = ['-m', 'markdown']
+end

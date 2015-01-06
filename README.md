@@ -60,6 +60,15 @@ Fill in the test_config.yml values then run the spec rake task.
 rake test:spec
 ```
 
+## Building the documentation
+
+The documentation is marked up using Yard + Markdown. The easiest way to build
+the included docs is to use the rake task.
+
+```sh
+rake yard
+```
+
 ## Contributing
 
 If you wish to submit an issue use the [issue tracker].
