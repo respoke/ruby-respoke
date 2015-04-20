@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.respoke.io/v1/roles
+    body:
+      encoding: UTF-8
+      string: '{"mediaRelay":false,"name":"aff0dd06-28bb-4ead-a216-bf4b24b878f5"}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - f617d125-4289-4933-8bc1-84947c31a14c
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"aff0dd06-28bb-4ead-a216-bf4b24b878f5","mediaRelay":false,"accountId":"A8005425-48CB-4BBB-B76D-0A9523832C3C","appId":"3175e820-f127-49ba-a9fc-253a8ddb475b","groups":{},"events":{},"pstnOut":[],"callerIds":[],"id":"07A5E228-5BC0-42AA-9225-5C18C4D802F4","createdAt":"2015-04-20T20:41:12.816Z","updatedAt":"2015-04-20T20:41:12.816Z"}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:12 GMT
+recorded_with: VCR 2.9.3

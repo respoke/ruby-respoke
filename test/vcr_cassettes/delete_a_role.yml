@@ -1,0 +1,143 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.respoke.io/v1/roles
+    body:
+      encoding: UTF-8
+      string: '{"name":"5c56531f-cdfa-4ac8-a506-00e3da4f530c"}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - df61cdc3-71d1-4cb1-a952-5c8442a52df1
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"5c56531f-cdfa-4ac8-a506-00e3da4f530c","accountId":"A8005425-48CB-4BBB-B76D-0A9523832C3C","appId":"3175e820-f127-49ba-a9fc-253a8ddb475b","groups":{},"events":{},"mediaRelay":false,"pstnOut":[],"callerIds":[],"id":"6D39AF49-3461-46A9-B581-3C6287168570","createdAt":"2015-04-20T20:41:14.363Z","updatedAt":"2015-04-20T20:41:14.363Z"}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:14 GMT
+- request:
+    method: delete
+    uri: https://api.respoke.io/v1/roles/6D39AF49-3461-46A9-B581-3C6287168570
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - 28df83d4-c754-4257-a74f-6c3612b14ed5
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Success"}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:14 GMT
+- request:
+    method: get
+    uri: https://api.respoke.io/v1/roles/6D39AF49-3461-46A9-B581-3C6287168570
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - 9518f7c8-4af5-406e-86f5-91e6545ee163
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Object ''Roles'' not found."}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:15 GMT
+recorded_with: VCR 2.9.3

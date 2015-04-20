@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.respoke.io/v1/roles
+    body:
+      encoding: UTF-8
+      string: '{"name":"08e2faa1-87d5-4641-8331-54f06c2dac54"}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - 128992d5-2a58-45b0-8c96-90d242951d89
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"08e2faa1-87d5-4641-8331-54f06c2dac54","accountId":"A8005425-48CB-4BBB-B76D-0A9523832C3C","appId":"3175e820-f127-49ba-a9fc-253a8ddb475b","groups":{},"events":{},"mediaRelay":false,"pstnOut":[],"callerIds":[],"id":"80A65F9F-143F-48DF-939B-B98F228F3C97","createdAt":"2015-04-20T20:41:15.515Z","updatedAt":"2015-04-20T20:41:15.515Z"}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:15 GMT
+- request:
+    method: get
+    uri: https://api.respoke.io/v1/roles/80A65F9F-143F-48DF-939B-B98F228F3C97
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:15 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - 46ed7ccb-d6a1-44e1-84e2-48616fc3f8fc
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"80A65F9F-143F-48DF-939B-B98F228F3C97","accountId":"A8005425-48CB-4BBB-B76D-0A9523832C3C","appId":"3175e820-f127-49ba-a9fc-253a8ddb475b","name":"08e2faa1-87d5-4641-8331-54f06c2dac54","groups":{},"events":{},"mediaRelay":false,"pstnOut":[],"callerIds":[],"createdAt":"2015-04-20T20:41:15.000Z","updatedAt":"2015-04-20T20:41:15.000Z"}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:15 GMT
+recorded_with: VCR 2.9.3
