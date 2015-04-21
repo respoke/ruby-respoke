@@ -28,5 +28,5 @@ task :build do
 end
 
 task :release => :build do
-  system "gem push respoke-#{Respoke::VERSION}"
+  system "gem push respoke-#{Respoke::VERSION}.gem"
 end
