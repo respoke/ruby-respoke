@@ -152,6 +152,99 @@ class Respoke::Client
     end
   end
 
+  # Get the roles
+  #
+  # @return [Array<Respoke::Role>]  An array of role objects
+  # @raise [Respoke::Errors::UnexpectedServerError] if errors occur
+  def roles()
+    response = connection.get 'roles'
+
+    if response.status != 200
+      raise Respoke::Errors::UnexpectedServerError, <<-ERR
+        request failed with status #{response.status}:
+        #{response.body}
+      ERR
+    else
+      response.body.map { |r| Respoke::Role.new(connection, r.each_with_object({}) { |(k,v), h| h[k.to_sym] = v} ) }
+    end
+  end
+
+  # Create a role
+  #
+  # @param name [String]  The name of the role
+  # @param rules [Hash]  The permissions for the role
+  #
+  # @return [Respoke::Role]  The role that was created
+  # @raise [Respoke::Errors::UnexpectedServerError] if errors occur
+  def create_role(name:, rules: {})
+    response = connection.post 'roles' do |request|
+      request.body = rules.merge( name: name )
+    end
+
+    if response.status != 200
+      raise Respoke::Errors::UnexpectedServerError, <<-ERR
+        request failed with status #{response.status}:
+        #{response.body}
+      ERR
+    else
+      Respoke::Role.new(self, response.body.each_with_object({}) { |(k,v), h| h[k.to_sym] = v} )
+    end
+  end
+
+
+  # Find a role
+  #
+  # @param id [String]  The id of the role to retrieve
+  #
+  # @return [Respoke::Role]  The role that was retrieved, nil if none found
+  # @raise [Respoke::Errors::UnexpectedServerError] if errors occur
+  def find_role(id:)
+    response = connection.get "roles/#{id}"
+
+    if response.status == 404
+      nil
+    elsif !response.success?
+      raise Respoke::Errors::UnexpectedServerError, <<-ERR
+        request failed with status #{response.status}:
+        #{response.body}
+      ERR
+    else
+      Respoke::Role.new(self, response.body.each_with_object({}) { |(k,v), h| h[k.to_sym] = v} )
+    end
+  end
+
+  # Update a role
+  #
+  # @param id [String]    The id of the role to update
+  # @param rules [Hash]   The new permissions for the role
+  #
+  # @return [Boolean]     true if successfully updated
+  # @raise [Respoke::Errors::UnexpectedServerError] if errors occur
+  def update_role(id:, rules:)
+    response = connection.put "roles/#{id}" do |request|
+      request.body = rules
+    end
+
+    if !response.success?
+      raise Respoke::Errors::UnexpectedServerError, <<-ERR
+        request failed with status #{response.status}:
+        #{response.body}
+      ERR
+    else
+      true
+    end
+  end
+
+  # Delete a role
+  #
+  # @param id [String]  The id of the role to retrieve
+  #
+  # @return [Boolean]  true if the role was deleted, false otherwise
+  def delete_role(id:)
+    response = connection.delete "roles/#{id}"
+    response.success?
+  end
+
   private
 
   # Creates a Faraday connection object to make requests with.

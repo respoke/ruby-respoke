@@ -1,0 +1,145 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.respoke.io/v1/roles
+    body:
+      encoding: UTF-8
+      string: '{"name":"f866474a-60d8-48a5-8de9-7e25fb997e77"}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - dda35023-b6f7-475e-bb71-884c9497fe14
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"name":"f866474a-60d8-48a5-8de9-7e25fb997e77","accountId":"A8005425-48CB-4BBB-B76D-0A9523832C3C","appId":"3175e820-f127-49ba-a9fc-253a8ddb475b","groups":{},"events":{},"mediaRelay":false,"pstnOut":[],"callerIds":[],"id":"4F3E7522-96D3-4170-9499-FF0CA63A4574","createdAt":"2015-04-20T20:41:13.208Z","updatedAt":"2015-04-20T20:41:13.208Z"}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:13 GMT
+- request:
+    method: put
+    uri: https://api.respoke.io/v1/roles/4F3E7522-96D3-4170-9499-FF0CA63A4574
+    body:
+      encoding: UTF-8
+      string: '{"accountId":"A8005425-48CB-4BBB-B76D-0A9523832C3C","appId":"3175e820-f127-49ba-a9fc-253a8ddb475b","groups":{},"events":{},"mediaRelay":true,"pstnOut":[],"callerIds":[],"createdAt":"2015-04-20T20:41:13.208Z","updatedAt":"2015-04-20T20:41:13.208Z"}'
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - d70a4406-01aa-4880-953c-afc429bf803d
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"4F3E7522-96D3-4170-9499-FF0CA63A4574","accountId":"A8005425-48CB-4BBB-B76D-0A9523832C3C","appId":"3175e820-f127-49ba-a9fc-253a8ddb475b","name":"f866474a-60d8-48a5-8de9-7e25fb997e77","groups":"{}","events":"{}","mediaRelay":1,"pstnOut":"[]","callerIds":"[]","createdAt":"2015-04-20T20:41:13.000Z","updatedAt":"2015-04-20T20:41:13.000Z"}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:13 GMT
+- request:
+    method: get
+    uri: https://api.respoke.io/v1/roles/4F3E7522-96D3-4170-9499-FF0CA63A4574
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      App-Secret:
+      - "<APP_SECRET>"
+      User-Agent:
+      - Faraday v0.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 20 Apr 2015 20:41:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
+      Request-Id:
+      - 0a0d9d49-e35d-41c8-aa41-3456ca274ab4
+      Ratelimit-Limit:
+      - '10'
+      Ratelimit-Time-Units:
+      - seconds
+      Ratelimit-Remaining:
+      - '19'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"4F3E7522-96D3-4170-9499-FF0CA63A4574","accountId":"A8005425-48CB-4BBB-B76D-0A9523832C3C","appId":"3175e820-f127-49ba-a9fc-253a8ddb475b","name":"f866474a-60d8-48a5-8de9-7e25fb997e77","groups":{},"events":{},"mediaRelay":true,"pstnOut":[],"callerIds":[],"createdAt":"2015-04-20T20:41:13.000Z","updatedAt":"2015-04-20T20:41:13.000Z"}'
+    http_version: 
+  recorded_at: Mon, 20 Apr 2015 20:41:14 GMT
+recorded_with: VCR 2.9.3
