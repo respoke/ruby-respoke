@@ -1,6 +1,7 @@
 require "bundler/gem_tasks"
 require "rake/testtask"
 require 'yard'
+require 'bundler/version'
 
 namespace :test do
   Rake::TestTask.new(:spec) do |t|
@@ -20,4 +21,12 @@ task :default => :test
 
 YARD::Rake::YardocTask.new do |t|
   t.options = ['-m', 'markdown']
+end
+
+task :build do
+  system "gem build respoke.gemspec"
+end
+
+task :release => :build do
+  system "gem push respoke-#{Respoke::VERSION}"
 end

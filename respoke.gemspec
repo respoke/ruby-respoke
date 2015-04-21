@@ -10,7 +10,6 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Matthew Turney']
   spec.email         = ['mturney@respoke.io']
   spec.summary       = %q{Wrapper library for the Respoke API.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
   spec.homepage      = 'https://respoke.io'
   spec.license       = 'MIT'
 
