@@ -13,7 +13,11 @@ require 'respoke'
 
 Minitest::Reporters.use! [Minitest::Reporters::SpecReporter.new]
 
-TestConfig = Hashie::Mash.load(File.expand_path('test_config.yml', __dir__))
+TestConfig = if ENV['TRAVIS']
+  Hashie::Mash.new(app_id: 'APP_ID', app_secret: 'APP_SECRET', role_id: 'ROLE_ID')
+else
+  Hashie::Mash.load(File.expand_path('test_config.yml', __dir__))
+end
 
 VCR.configure do |config|
   # Due to a bug in VCR faraday middleware we must use webmock. A fix has been
