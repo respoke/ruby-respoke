@@ -165,7 +165,7 @@ class Respoke::Client
         #{response.body}
       ERR
     else
-      response.body.map { |r| Respoke::Role.new(connection, r.each_with_object({}) { |(k,v), h| h[k.to_sym] = v} ) }
+      response.body.map { |r| Respoke::Role.new(self, r.each_with_object({}) { |(k,v), h| h[k.to_sym] = v} ) }
     end
   end
 

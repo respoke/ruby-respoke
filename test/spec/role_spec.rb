@@ -1,7 +1,6 @@
 
 require 'test_helper'
 
-
 describe "Roles" do
   let :client do
     Respoke::Client.new(app_secret: TestConfig.app_secret)
@@ -39,6 +38,36 @@ describe "Roles" do
     VCR.use_cassette 'delete_a_role' do
       existing_role.delete
       assert client.find_role(id: existing_role.id).nil?
+    end
+  end
+
+  describe "with bulk retrieved roles" do
+    before :each do
+      VCR.use_cassette 'bulk_roles' do
+        2.times { client.create_role(name: SecureRandom::uuid(), rules:{}) }
+      end
+    end
+
+    let :retrieved_roles do
+      client.roles()
+    end
+
+    it "can delete" do
+      VCR.use_cassette 'delete a retrieved role' do
+        first_id = retrieved_roles.first.id
+        retrieved_roles.first.delete()
+        assert !client.roles().map(&:id).include?(first_id)
+      end
+    end
+
+    it "can be updates" do
+      VCR.use_cassette 'update a retrieved role' do
+        role = retrieved_roles.first
+        assert role.rules[:mediaRelay] == false
+        role.rules[:mediaRelay]=true
+        role.save
+        assert (client.roles().first.rules[:mediaRelay] == true)
+      end
     end
   end
 end
