@@ -1,6 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
-
+require 'respoke/version'
 require 'respoke/errors'
 require 'respoke/response'
 
@@ -253,7 +253,10 @@ class Respoke::Client
   def connection
     @connection ||= Faraday.new(
       url: @base_url,
-      headers: { :'App-Secret' => @app_secret }
+      headers: {
+        :'App-Secret' => @app_secret,
+        :'Respoke-SDK' => respoke_sdk_header
+      }
     ) do |faraday|
       faraday.request :json
 
@@ -261,5 +264,10 @@ class Respoke::Client
 
       faraday.adapter Faraday.default_adapter
     end
+  end
+
+  def respoke_sdk_header
+    os = RbConfig::CONFIG['host_os'];
+    "Respoke-Ruby/#{Respoke::VERSION} (#{os}) Ruby/#{RUBY_VERSION}"
   end
 end
