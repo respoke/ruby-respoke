@@ -69,6 +69,13 @@ the included docs is to use the rake task.
 ```sh
 rake yard
 ```
+## Releasing
+
+To cut a new release, you'll need to have permissions to push the `respoke` gem
+to the rubygems.org repo.
+
+1. Install gem-release. `gem install gem-release`
+2. Do the release. `gem bump --version minor --tag --release`
 
 ## Contributing
 
