@@ -1,6 +1,6 @@
 [![Gem Version](https://badge.fury.io/rb/respoke.svg)](http://badge.fury.io/rb/respoke)
-[![Build Status](https://travis-ci.org/pho3nixf1re/ruby-respoke.svg?branch=master)](https://travis-ci.org/pho3nixf1re/ruby-respoke)
-[![Dependency Status](https://gemnasium.com/pho3nixf1re/ruby-respoke.svg)](https://gemnasium.com/pho3nixf1re/ruby-respoke)
+[![Build Status](https://travis-ci.org/respoke/ruby-respoke.svg?branch=master)](https://travis-ci.org/respoke/ruby-respoke)
+[![Dependency Status](https://gemnasium.com/respoke/ruby-respoke.svg)](https://gemnasium.com/respoke/ruby-respoke)
 
 # Respoke
 
